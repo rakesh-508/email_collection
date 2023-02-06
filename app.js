@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/",function(req,res)
 {
-    res.sendFile(__dirname +"/singnup.html");
+    res.sendFile(__dirname +"/index.html");
 })
 app.post("/",function(req,res)
 {
@@ -62,11 +62,8 @@ app.post("/failure",function(req,res)
 {
     res.redirect("/");
 })
-app.listen(3000,function()
+app.listen( process.env.PORT || 3000,function()
 {
     console.log("this is my second server server");
 })
 
-// dde1f09cea95fcd19f8fdd627a770775-us8 api key for mail champs
-// f980d55898  audience id
- 
