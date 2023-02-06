@@ -3,7 +3,8 @@ const bodyParser = require("body-parser");
 const request = require("request");
 const app = express();
 const https = require("https");
-app.use(express.static("public")); 
+app.use(express.static("public/css")); 
+app.use(express.static("public/images")); 
 // this code is to send the data like css files and images to the server
 app.use(bodyParser.urlencoded({extended:true}));
 
