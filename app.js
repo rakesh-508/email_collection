@@ -1,12 +1,15 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const request = require("request");
+const request = require('request');
+require('dotenv').config();
+// console.log(process.env);
 const app = express();
 const https = require("https");
-app.use(express.static("public/css")); 
-app.use(express.static("public/images")); 
+app.use(express.static("public")); 
+app.use(express.static("public")); 
 // this code is to send the data like css files and images to the server
 app.use(bodyParser.urlencoded({extended:true}));
+const api_key = process.env.API_KEY;
 
 app.get("/",function(req,res)
 {
@@ -41,7 +44,7 @@ app.post("/",function(req,res)
     const options = 
     {
         method : "POST",
-        auth : "rakesh:dde1f09cea95fcd19f8fdd627a770775-us8"
+        auth : "rakesh:" + api_key
     }
 
     const request = https.request(url, options, function(response){

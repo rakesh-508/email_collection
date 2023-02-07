@@ -1,2 +1,2 @@
-API_KEY = dde1f09cea95fcd19f8fdd627a770775-us8
-node_modules
+.env
+node_modules/
