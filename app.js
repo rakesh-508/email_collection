@@ -10,6 +10,7 @@ app.use(express.static("public"));
 // this code is to send the data like css files and images to the server
 app.use(bodyParser.urlencoded({extended:true}));
 const api_key = process.env.API_KEY;
+console.log(api_key)
 
 app.get("/",function(req,res)
 {
